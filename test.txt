@@ -1,0 +1,22 @@
+inicioprog
+inicioargs
+ literal letra;
+ inteiro cont;
+fimargs
+iniciovars
+ literal chute;
+ inteiro zero;
+fimvars
+chute="k";
+zero=0;
+se(letra==chute) entao
+ escreva "Acertei!\n";
+fimse
+se(cont < zero) entao
+ escreva "cont < 0\n";
+fimse
+enquanto(cont > 0) faca
+ escreva letra;
+ escreva "\n";
+fimenquanto
+fimprog
