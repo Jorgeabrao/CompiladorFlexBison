@@ -1001,7 +1001,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 64 "lex.l"
-{ return FIM_DE_ARQ;}
+{ printf("EOF\n"); return FIM_DE_ARQ;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP

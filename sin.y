@@ -35,11 +35,11 @@ programa:
 args:
     INICIOARGS listavars FIMARGS args
     | codigo
-    | 
     ;
 
 codigo:
     INICIOVARS listavars FIMVARS restante
+    | error
     ;
 
 listavars:
@@ -51,9 +51,12 @@ listavars:
 restante:
     IDENTIFICADOR ATRIBUICAO LITERAL_CONST PONTO_E_VIRG restante
     | IDENTIFICADOR ATRIBUICAO NUMERO PONTO_E_VIRG restante
-    | SE ABRE_PAR cond FECHA_PAR ENTAO comando
-    | FIMPROG restante
-    | FIM_DE_ARQ {return 0;}
+    | SE ABRE_PAR cond FECHA_PAR ENTAO restante FIMSE restante
+    | ENQUANTO ABRE_PAR cond FECHA_PAR FACA restante FIMENQUANTO restante
+    | ESCREVA LITERAL_CONST PONTO_E_VIRG restante
+    | ESCREVA IDENTIFICADOR PONTO_E_VIRG restante
+    | FIMPROG eof
+    | 
     ;
 
 cond:
@@ -64,6 +67,11 @@ cond:
     | LITERAL OP_RELACIONAL IDENTIFICADOR
     | IDENTIFICADOR OP_RELACIONAL NUMERO
     | IDENTIFICADOR OP_RELACIONAL LITERAL_CONST
+    ;
+
+eof:
+    FIM_DE_ARQ {return 0;}
+    | error eof {yyerrok;}
     ;
 
 %%

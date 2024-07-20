@@ -80,11 +80,12 @@ typedef union YYSTYPE
 #line 14 "sin.y"
 
     char *str;
+    int num;
 
 
 
 /* Line 1676 of yacc.c  */
-#line 88 "sin.tab.h"
+#line 89 "sin.tab.h"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
