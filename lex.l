@@ -43,10 +43,15 @@ whitespace  [ \t\r]
  update_position(yytext);
  return IDENTIFICADOR; 
 }
-{digit}+(\.{digit}+)?(E|e+|-?{digit}+)? {
+{digit}+ {
  yylval.str = strdup(yytext);
  update_position(yytext);
  return NUMERO; 
+}
+{digit}+(\.{digit}+)?(E|e+|-?{digit}+)? {
+ yylval.str = strdup(yytext);
+ update_position(yytext);
+ return REAL;
 }
 \"({letter}|{digit}|{symbol}|{whitespace}|;)*\"  { 
  yylval.str = strdup(yytext);

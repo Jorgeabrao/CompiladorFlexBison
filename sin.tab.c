@@ -73,14 +73,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include "symbol_table.h"
 
 extern int yylex();
 extern int yyparse();
 extern FILE *yyin;
 void yyerror(const char *s);
-int numType(char *num);
 int checkType(const char *name, const char *encounteredType);
 int idsCheckType(const char *name, const char *name2);
 void idsMathCheck(char *ar1, char *ar2, char *op);
@@ -96,7 +94,7 @@ extern int col_num;
 
 
 /* Line 189 of yacc.c  */
-#line 100 "sin.tab.c"
+#line 98 "sin.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -161,7 +159,7 @@ typedef union YYSTYPE
 {
 
 /* Line 214 of yacc.c  */
-#line 27 "sin.y"
+#line 25 "sin.y"
 
     char *str;
     int num;
@@ -169,7 +167,7 @@ typedef union YYSTYPE
 
 
 /* Line 214 of yacc.c  */
-#line 173 "sin.tab.c"
+#line 171 "sin.tab.c"
 } YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
@@ -181,7 +179,7 @@ typedef union YYSTYPE
 
 
 /* Line 264 of yacc.c  */
-#line 185 "sin.tab.c"
+#line 183 "sin.tab.c"
 
 #ifdef short
 # undef short
@@ -485,10 +483,10 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    46,    46,    50,    51,    55,    59,    66,    73,    80,
-      91,   102,   113,   122,   131,   132,   135,   137,   138,   144,
-     150,   151,   152,   153,   154,   155,   156,   157,   158,   159,
-     163,   164,   165,   166,   167,   168,   169,   173
+       0,    44,    44,    48,    49,    53,    57,    64,    71,    78,
+      89,   100,   111,   120,   129,   130,   133,   135,   136,   137,
+     138,   139,   140,   141,   142,   143,   144,   145,   146,   147,
+     151,   152,   153,   154,   155,   156,   157,   161
 };
 #endif
 
@@ -1448,14 +1446,14 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 46 "sin.y"
+#line 44 "sin.y"
     {return 0;;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 60 "sin.y"
+#line 58 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1467,7 +1465,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 67 "sin.y"
+#line 65 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1479,7 +1477,7 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 74 "sin.y"
+#line 72 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1491,7 +1489,7 @@ yyreduce:
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 81 "sin.y"
+#line 79 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1507,7 +1505,7 @@ yyreduce:
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 92 "sin.y"
+#line 90 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1523,7 +1521,7 @@ yyreduce:
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 103 "sin.y"
+#line 101 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(2) - (4)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(2) - (4)].str));
         error++;
@@ -1539,7 +1537,7 @@ yyreduce:
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 114 "sin.y"
+#line 112 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(1) - (3)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(1) - (3)].str));
         error++;
@@ -1553,7 +1551,7 @@ yyreduce:
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 123 "sin.y"
+#line 121 "sin.y"
     {if((searchSymbol(symTable, (yyvsp[(1) - (3)].str)))==1){ 
         printf("Error:%d:%d: Identificador \"%s\" já declarado anteriormente\n",line_num, col_num, (yyvsp[(1) - (3)].str));
         error++;
@@ -1567,59 +1565,49 @@ yyreduce:
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 137 "sin.y"
+#line 135 "sin.y"
     {if(checkType((yyvsp[(1) - (5)].str), "literal") == 0) updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str));;}
     break;
 
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 138 "sin.y"
-    {if(checkType((yyvsp[(1) - (5)].str), "inteiro") == 0 && numType((yyvsp[(3) - (5)].str)) == 1){ 
-        updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str))
-        ;}else{
-            error++;
-            printf("Erro:%d:%d: Tipo de '%s' esperado: 'inteiro', mas %s é: 'real'\n", line_num, col_num, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str));
-        };}
+#line 136 "sin.y"
+    {if(checkType((yyvsp[(1) - (5)].str), "inteiro") == 0) updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str));;}
     break;
 
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 144 "sin.y"
-    {if(checkType((yyvsp[(1) - (5)].str), "real") == 0 && numType((yyvsp[(3) - (5)].str)) == 0){ 
-        updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str))
-        ;}else{
-            error++;
-            printf("Erro:%d:%d: Tipo de '%s' esperado: 'real', mas %s é: 'inteiro'\n", line_num, col_num, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str));
-        };}
+#line 137 "sin.y"
+    {if(checkType((yyvsp[(1) - (5)].str), "real") == 0) updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str));;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 150 "sin.y"
+#line 138 "sin.y"
     {if(idsCheckType((yyvsp[(1) - (5)].str), (yyvsp[(3) - (5)].str)) == 0) updateSymbolValue(symTable, (yyvsp[(1) - (5)].str), searchSymbolValue(symTable, (yyvsp[(3) - (5)].str)));;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 151 "sin.y"
+#line 139 "sin.y"
     {idsMathCheck((yyvsp[(3) - (7)].str), (yyvsp[(5) - (7)].str), (yyvsp[(4) - (7)].str));;}
     break;
 
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 163 "sin.y"
+#line 151 "sin.y"
     {idsCheckType((yyvsp[(1) - (3)].str), (yyvsp[(3) - (3)].str));;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1623 "sin.tab.c"
+#line 1611 "sin.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1831,7 +1819,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 176 "sin.y"
+#line 164 "sin.y"
 
 
 void yyerror(const char *s) {
@@ -1840,6 +1828,7 @@ void yyerror(const char *s) {
 
 int checkType(const char *name, const char *encounteredType) {
     char *c = searchSymbolType(symTable, name);
+    
     if(strcmp(c,"Não encontrado") == 0){
         error++;
         printf("Erro:%d:%d: Identificador '%s' não declarado\n", line_num, col_num, name);
@@ -1903,19 +1892,6 @@ void idsMathCheck(char *ar1, char *ar2, char *op){
             return;
         }
     }
-}
-
-int numType(char *num){
-    int i = 0;
-    if (num[0] == '-' || num[0] == '+') {
-        i = 1;
-    }
-    for (; num[i] != '\0'; i++) {
-        if (!isdigit(num[i])) {
-            return 0;
-        }
-    }
-    return 1;
 }
 
 int main(int argc, char **argv) {

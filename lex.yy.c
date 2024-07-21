@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 39
-#define YY_END_OF_BUFFER 40
+#define YY_NUM_RULES 40
+#define YY_END_OF_BUFFER 41
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,13 +362,13 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[122] =
     {   0,
-        0,    0,   40,   38,   36,   17,   38,   32,   33,   29,
-       27,   34,   28,   30,   19,   35,   21,   31,   22,   18,
-       18,   18,   18,   18,   18,   18,   38,   36,    0,   20,
-        0,    0,   19,   19,   19,   24,   26,   25,   23,   18,
-       18,   18,   18,   18,   18,   18,   18,   11,    0,   37,
-       19,   19,   18,   18,   18,   18,   18,   18,   18,   18,
-       18,   19,   18,   18,   18,   15,   18,   18,   18,   18,
+        0,    0,   41,   39,   37,   17,   39,   33,   34,   30,
+       28,   35,   29,   31,   19,   36,   22,   32,   23,   18,
+       18,   18,   18,   18,   18,   18,   39,   37,    0,   21,
+        0,    0,   19,   20,   20,   25,   27,   26,   24,   18,
+       18,   18,   18,   18,   18,   18,   18,   11,    0,   38,
+       20,   20,   18,   18,   18,   18,   18,   18,   18,   18,
+       18,   20,   18,   18,   18,   15,   18,   18,   18,   18,
        18,   18,   18,   18,    9,   18,   12,   18,   18,   18,
        18,   13,   18,   18,   18,   18,   18,   18,   18,   18,
        18,   18,   18,   18,   18,   18,    7,    4,   18,    2,
@@ -918,112 +918,121 @@ YY_RULE_SETUP
 case 20:
 YY_RULE_SETUP
 #line 51 "lex.l"
+{
+ yylval.str = strdup(yytext);
+ update_position(yytext);
+ return REAL;
+}
+	YY_BREAK
+case 21:
+YY_RULE_SETUP
+#line 56 "lex.l"
 { 
  yylval.str = strdup(yytext);
  update_position(yytext);
  return LITERAL_CONST; 
 }
 	YY_BREAK
-case 21:
-YY_RULE_SETUP
-#line 56 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
-	YY_BREAK
 case 22:
-YY_RULE_SETUP
-#line 57 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
-	YY_BREAK
-case 23:
-YY_RULE_SETUP
-#line 58 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
-	YY_BREAK
-case 24:
-YY_RULE_SETUP
-#line 59 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
-	YY_BREAK
-case 25:
-YY_RULE_SETUP
-#line 60 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
-	YY_BREAK
-case 26:
 YY_RULE_SETUP
 #line 61 "lex.l"
 { yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
 	YY_BREAK
-case 27:
+case 23:
 YY_RULE_SETUP
 #line 62 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return OP_ARITMETICO; }
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
+	YY_BREAK
+case 24:
+YY_RULE_SETUP
+#line 63 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
+	YY_BREAK
+case 25:
+YY_RULE_SETUP
+#line 64 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
+	YY_BREAK
+case 26:
+YY_RULE_SETUP
+#line 65 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
+	YY_BREAK
+case 27:
+YY_RULE_SETUP
+#line 66 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_RELACIONAL; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 63 "lex.l"
+#line 67 "lex.l"
 { yylval.str = strdup(yytext);update_position(yytext); return OP_ARITMETICO; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 64 "lex.l"
+#line 68 "lex.l"
 { yylval.str = strdup(yytext);update_position(yytext); return OP_ARITMETICO; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 65 "lex.l"
+#line 69 "lex.l"
 { yylval.str = strdup(yytext);update_position(yytext); return OP_ARITMETICO; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 66 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return ATRIBUICAO; }
+#line 70 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return OP_ARITMETICO; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 67 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return ABRE_PAR; }
+#line 71 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return ATRIBUICAO; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 68 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return FECHA_PAR; }
+#line 72 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return ABRE_PAR; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 69 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return VIRGULA; }
+#line 73 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return FECHA_PAR; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 70 "lex.l"
-{ yylval.str = strdup(yytext);update_position(yytext); return PONTO_E_VIRG; }
+#line 74 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return VIRGULA; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 71 "lex.l"
-{ /* Ignora espaços em branco */ }
+#line 75 "lex.l"
+{ yylval.str = strdup(yytext);update_position(yytext); return PONTO_E_VIRG; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 72 "lex.l"
-{ /* Ignora comentários */ }
-	YY_BREAK
-case YY_STATE_EOF(INITIAL):
-#line 73 "lex.l"
-{return FIM_DE_ARQ;}
+#line 76 "lex.l"
+{ /* Ignora espaços em branco */ }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 74 "lex.l"
-{ printf("Invalid token:%s\n", yytext);return ERRO; }
+#line 77 "lex.l"
+{ /* Ignora comentários */ }
+	YY_BREAK
+case YY_STATE_EOF(INITIAL):
+#line 78 "lex.l"
+{return FIM_DE_ARQ;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 76 "lex.l"
+#line 79 "lex.l"
+{ printf("Invalid token:%s\n", yytext);return ERRO; }
+	YY_BREAK
+case 40:
+YY_RULE_SETUP
+#line 81 "lex.l"
 ECHO;
 	YY_BREAK
-#line 1027 "lex.yy.c"
+#line 1036 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2026,7 +2035,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 76 "lex.l"
+#line 81 "lex.l"
 
 
 void update_position(const char *text) {

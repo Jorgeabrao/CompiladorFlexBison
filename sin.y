@@ -2,14 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include "symbol_table.h"
 
 extern int yylex();
 extern int yyparse();
 extern FILE *yyin;
 void yyerror(const char *s);
-int numType(char *num);
 int checkType(const char *name, const char *encounteredType);
 int idsCheckType(const char *name, const char *name2);
 void idsMathCheck(char *ar1, char *ar2, char *op);
@@ -135,18 +133,8 @@ listavars:
 restante:
     
     |IDENTIFICADOR ATRIBUICAO LITERAL_CONST PONTO_E_VIRG restante {if(checkType($1, "literal") == 0) updateSymbolValue(symTable, $1, $3);}
-    | IDENTIFICADOR ATRIBUICAO NUMERO PONTO_E_VIRG restante {if(checkType($1, "inteiro") == 0 && numType($3) == 1){ 
-        updateSymbolValue(symTable, $1, $3)
-        ;}else{
-            error++;
-            printf("Erro:%d:%d: Tipo de '%s' esperado: 'inteiro', mas %s é: 'real'\n", line_num, col_num, $1, $3);
-        }}
-    | IDENTIFICADOR ATRIBUICAO REAL PONTO_E_VIRG restante {if(checkType($1, "real") == 0 && numType($3) == 0){ 
-        updateSymbolValue(symTable, $1, $3)
-        ;}else{
-            error++;
-            printf("Erro:%d:%d: Tipo de '%s' esperado: 'real', mas %s é: 'inteiro'\n", line_num, col_num, $1, $3);
-        }}
+    | IDENTIFICADOR ATRIBUICAO NUMERO PONTO_E_VIRG restante {if(checkType($1, "inteiro") == 0) updateSymbolValue(symTable, $1, $3);}
+    | IDENTIFICADOR ATRIBUICAO REAL PONTO_E_VIRG restante {if(checkType($1, "real") == 0) updateSymbolValue(symTable, $1, $3);}
     | IDENTIFICADOR ATRIBUICAO IDENTIFICADOR PONTO_E_VIRG restante {if(idsCheckType($1, $3) == 0) updateSymbolValue(symTable, $1, searchSymbolValue(symTable, $3));}
     | IDENTIFICADOR ATRIBUICAO IDENTIFICADOR OP_ARITMETICO IDENTIFICADOR PONTO_E_VIRG restante{idsMathCheck($3, $5, $4);}
     | IDENTIFICADOR ATRIBUICAO IDENTIFICADOR OP_ARITMETICO NUMERO PONTO_E_VIRG restante 
@@ -181,9 +169,7 @@ void yyerror(const char *s) {
 
 int checkType(const char *name, const char *encounteredType) {
     char *c = searchSymbolType(symTable, name);
-    if(strcmp(c,"real") == 0 && strcmp(encounteredType,"inteiro") == 0 ){
-        return 0;
-    }
+    
     if(strcmp(c,"Não encontrado") == 0){
         error++;
         printf("Erro:%d:%d: Identificador '%s' não declarado\n", line_num, col_num, name);
@@ -247,19 +233,6 @@ void idsMathCheck(char *ar1, char *ar2, char *op){
             return;
         }
     }
-}
-
-int numType(char *num){
-    int i = 0;
-    if (num[0] == '-' || num[0] == '+') {
-        i = 1;
-    }
-    for (; num[i] != '\0'; i++) {
-        if (!isdigit(num[i])) {
-            return 0;
-        }
-    }
-    return 1;
 }
 
 int main(int argc, char **argv) {
