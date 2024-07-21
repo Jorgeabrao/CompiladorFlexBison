@@ -15,53 +15,53 @@ whitespace  [ \t\r\n]
 
 %%
 
-"inicioprog"      { printf("%s\n", yytext);return INICIOPROG;}
-"fimprog"         { printf("%s\n", yytext);return FIMPROG;}
-"inicioargs"      { printf("%s\n", yytext);return INICIOARGS;}
-"fimargs"         { printf("%s\n", yytext);return FIMARGS;}
-"iniciovars"      { printf("%s\n", yytext);return INICIOVARS;}
-"fimvars"         { printf("%s\n", yytext);return FIMVARS;}
-"escreva"         { printf("%s\n", yytext);return ESCREVA;}
-"inteiro"         { printf("%s\n", yytext);return INTEIRO;}
-"real"            { printf("%s\n", yytext);return REAL;}
-"literal"         { printf("%s\n", yytext);return LITERAL;}
-"se"              { printf("%s\n", yytext);return SE;}
-"entao"           { printf("%s\n", yytext);return ENTAO;}
-"fimse"           { printf("%s\n", yytext);return FIMSE;}
-"enquanto"        { printf("%s\n", yytext);return ENQUANTO;}
-"faca"            { printf("%s\n", yytext);return FACA;}
-"fimenquanto"     { printf("%s\n", yytext);return FIMENQUANTO;}
+"inicioprog"      { return INICIOPROG;}
+"fimprog"         { return FIMPROG;}
+"inicioargs"      { return INICIOARGS;}
+"fimargs"         { return FIMARGS;}
+"iniciovars"      { return INICIOVARS;}
+"fimvars"         { return FIMVARS;}
+"escreva"         { return ESCREVA;}
+"inteiro"         { return INTEIRO;}
+"real"            { return REAL;}
+"literal"         { return LITERAL;}
+"se"              { return SE;}
+"entao"           { return ENTAO;}
+"fimse"           { return FIMSE;}
+"enquanto"        { return ENQUANTO;}
+"faca"            { return FACA;}
+"fimenquanto"     { return FIMENQUANTO;}
 
 {letter}({letter}|{digit}|_)*   {
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return IDENTIFICADOR; 
+ return IDENTIFICADOR; 
 }
 {digit}+(\.{digit}+)?(E|e+|-?{digit}+)? {
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return NUMERO; 
+ return NUMERO; 
 }
 \"({letter}|{digit}|{symbol}|{whitespace})*\"  { 
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return LITERAL_CONST; 
+ return LITERAL_CONST; 
 }
-"<"  { printf("%s\n", yytext);return OP_RELACIONAL; }
-">"  { printf("%s\n", yytext);return OP_RELACIONAL; }
-">=" { printf("%s\n", yytext);return OP_RELACIONAL; }
-"<=" { printf("%s\n", yytext);return OP_RELACIONAL; }
-"==" { printf("%s\n", yytext);return OP_RELACIONAL; }
-"<>" { printf("%s\n", yytext);return OP_RELACIONAL; }
-"+"  { printf("%s\n", yytext);return OP_ARITMETICO; }
-"-"  { printf("%s\n", yytext);return OP_ARITMETICO; }
-"*"  { printf("%s\n", yytext);return OP_ARITMETICO; }
-"/"  { printf("%s\n", yytext);return OP_ARITMETICO; }
-"="  { printf("%s\n", yytext);return ATRIBUICAO; }
-"\(" { printf("%s\n", yytext);return ABRE_PAR; }
-"\)" { printf("%s\n", yytext);return FECHA_PAR; }
-","  { printf("%s\n", yytext);return VIRGULA; }
-";"  { printf("%s\n", yytext);return PONTO_E_VIRG; }
+"<"  { return OP_RELACIONAL; }
+">"  { return OP_RELACIONAL; }
+">=" { return OP_RELACIONAL; }
+"<=" { return OP_RELACIONAL; }
+"==" { return OP_RELACIONAL; }
+"<>" { return OP_RELACIONAL; }
+"+"  { return OP_ARITMETICO; }
+"-"  { return OP_ARITMETICO; }
+"*"  { return OP_ARITMETICO; }
+"/"  { return OP_ARITMETICO; }
+"="  { return ATRIBUICAO; }
+"\(" { return ABRE_PAR; }
+"\)" { return FECHA_PAR; }
+","  { return VIRGULA; }
+";"  { return PONTO_E_VIRG; }
 {whitespace}+ { /* Ignora espaços em branco */ }
 "{"({letter}|{digit}|{symbol}|{whitespace})*"}" { /* Ignora comentários */ }
-<<EOF>> { printf("EOF\n"); return FIM_DE_ARQ;}
+<<EOF>> {return FIM_DE_ARQ;}
 .  { printf("%s\n", yytext);return ERRO; }
 
 %%

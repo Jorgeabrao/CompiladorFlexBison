@@ -24,6 +24,7 @@ SymbolTable *symTable;
 %token <str>  ATRIBUICAO ABRE_PAR FECHA_PAR LITERAL_CONST
 %token <str>  VIRGULA PONTO_E_VIRG FIM_DE_ARQ ERRO
 
+%verbose
 %start programa
 
 %%

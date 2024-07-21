@@ -464,9 +464,9 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    32,    32,    36,    37,    41,    42,    46,    47,    48,
-      52,    53,    54,    55,    56,    57,    58,    59,    63,    64,
-      65,    66,    67,    68,    69,    73,    74
+       0,    33,    33,    37,    38,    42,    43,    47,    48,    49,
+      53,    54,    55,    56,    57,    58,    59,    60,    64,    65,
+      66,    67,    68,    69,    70,    74,    75
 };
 #endif
 
@@ -1407,21 +1407,21 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 32 "sin.y"
+#line 33 "sin.y"
     {printf("oi\n"); ;}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 73 "sin.y"
+#line 74 "sin.y"
     {return 0;;}
     break;
 
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 74 "sin.y"
+#line 75 "sin.y"
     {yyerrok;;}
     break;
 
@@ -1640,7 +1640,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 77 "sin.y"
+#line 78 "sin.y"
 
 
 void yyerror(const char *s) {

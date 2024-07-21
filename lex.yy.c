@@ -810,89 +810,89 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 18 "lex.l"
-{ printf("%s\n", yytext);return INICIOPROG;}
+{ return INICIOPROG;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 19 "lex.l"
-{ printf("%s\n", yytext);return FIMPROG;}
+{ return FIMPROG;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 20 "lex.l"
-{ printf("%s\n", yytext);return INICIOARGS;}
+{ return INICIOARGS;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 21 "lex.l"
-{ printf("%s\n", yytext);return FIMARGS;}
+{ return FIMARGS;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 22 "lex.l"
-{ printf("%s\n", yytext);return INICIOVARS;}
+{ return INICIOVARS;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 23 "lex.l"
-{ printf("%s\n", yytext);return FIMVARS;}
+{ return FIMVARS;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 24 "lex.l"
-{ printf("%s\n", yytext);return ESCREVA;}
+{ return ESCREVA;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 25 "lex.l"
-{ printf("%s\n", yytext);return INTEIRO;}
+{ return INTEIRO;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 26 "lex.l"
-{ printf("%s\n", yytext);return REAL;}
+{ return REAL;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 27 "lex.l"
-{ printf("%s\n", yytext);return LITERAL;}
+{ return LITERAL;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 28 "lex.l"
-{ printf("%s\n", yytext);return SE;}
+{ return SE;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 29 "lex.l"
-{ printf("%s\n", yytext);return ENTAO;}
+{ return ENTAO;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 30 "lex.l"
-{ printf("%s\n", yytext);return FIMSE;}
+{ return FIMSE;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
 #line 31 "lex.l"
-{ printf("%s\n", yytext);return ENQUANTO;}
+{ return ENQUANTO;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
 #line 32 "lex.l"
-{ printf("%s\n", yytext);return FACA;}
+{ return FACA;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 33 "lex.l"
-{ printf("%s\n", yytext);return FIMENQUANTO;}
+{ return FIMENQUANTO;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 35 "lex.l"
 {
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return IDENTIFICADOR; 
+ return IDENTIFICADOR; 
 }
 	YY_BREAK
 case 18:
@@ -900,7 +900,7 @@ YY_RULE_SETUP
 #line 39 "lex.l"
 {
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return NUMERO; 
+ return NUMERO; 
 }
 	YY_BREAK
 case 19:
@@ -909,83 +909,83 @@ YY_RULE_SETUP
 #line 43 "lex.l"
 { 
     yylval.str = strdup(yytext);
-    printf("%s\n", yytext);return LITERAL_CONST; 
+ return LITERAL_CONST; 
 }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 47 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 48 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 49 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 50 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 51 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
 #line 52 "lex.l"
-{ printf("%s\n", yytext);return OP_RELACIONAL; }
+{ return OP_RELACIONAL; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
 #line 53 "lex.l"
-{ printf("%s\n", yytext);return OP_ARITMETICO; }
+{ return OP_ARITMETICO; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
 #line 54 "lex.l"
-{ printf("%s\n", yytext);return OP_ARITMETICO; }
+{ return OP_ARITMETICO; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
 #line 55 "lex.l"
-{ printf("%s\n", yytext);return OP_ARITMETICO; }
+{ return OP_ARITMETICO; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 56 "lex.l"
-{ printf("%s\n", yytext);return OP_ARITMETICO; }
+{ return OP_ARITMETICO; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 57 "lex.l"
-{ printf("%s\n", yytext);return ATRIBUICAO; }
+{ return ATRIBUICAO; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 58 "lex.l"
-{ printf("%s\n", yytext);return ABRE_PAR; }
+{ return ABRE_PAR; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 59 "lex.l"
-{ printf("%s\n", yytext);return FECHA_PAR; }
+{ return FECHA_PAR; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 60 "lex.l"
-{ printf("%s\n", yytext);return VIRGULA; }
+{ return VIRGULA; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 61 "lex.l"
-{ printf("%s\n", yytext);return PONTO_E_VIRG; }
+{ return PONTO_E_VIRG; }
 	YY_BREAK
 case 35:
 /* rule 35 can match eol */
@@ -1001,7 +1001,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
 #line 64 "lex.l"
-{ printf("EOF\n"); return FIM_DE_ARQ;}
+{return FIM_DE_ARQ;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
