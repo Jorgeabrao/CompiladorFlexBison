@@ -1,22 +1,25 @@
 #ifndef SYMBOL_TABLE_H
 #define SYMBOL_TABLE_H
 
-#define TABLE_SIZE 100
-
 typedef struct Symbol {
-    char name[50];
-    char type[20];
+    char *name;
+    char *type;
+    char *value;
     struct Symbol *next;
 } Symbol;
 
 typedef struct SymbolTable {
-    Symbol *table[TABLE_SIZE];
+    Symbol *head;
 } SymbolTable;
 
-unsigned int hash(char *str);
 SymbolTable* createSymbolTable();
-void insertSymbol(SymbolTable *symTable, char *name, char *type);
-Symbol* lookupSymbol(SymbolTable *symTable, char *name);
-void printSymbolTable(SymbolTable *symTable);
+void insertSymbol(SymbolTable *table, const char *name, const char *type);
+int searchSymbol(SymbolTable *table, const char *name);
+void updateSymbolType(SymbolTable *table, const char *name, const char *type);
+void printSymbolTable(SymbolTable *table);
+void freeSymbolTable(SymbolTable *table);
+char* searchSymbolType(SymbolTable *table, const char *name);
+void updateSymbolValue(SymbolTable *table, const char *name, const char *value);
+char* searchSymbolValue(SymbolTable *table, const char *name);
 
 #endif

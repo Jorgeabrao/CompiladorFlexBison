@@ -77,7 +77,7 @@ typedef union YYSTYPE
 {
 
 /* Line 1676 of yacc.c  */
-#line 14 "sin.y"
+#line 27 "sin.y"
 
     char *str;
     int num;
