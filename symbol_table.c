@@ -100,13 +100,17 @@ void updateSymbolValue(SymbolTable *table, const char *name, const char *value){
     //printf("Símbolo '%s' não encontrado na tabela.\n", name);
 }
 
-char* searchSymbolValue(SymbolTable *table, const char *name) {
+char *searchSymbolValue(SymbolTable *table, const char *name) {
     Symbol *current = table->head;
     while (current != NULL) {
         if (strcmp(current->name, name) == 0) {
+            if(current->value == NULL){
+                free(current->value);
+                current->value = "NULL";
+            }
             return current->value;
         }
         current = current->next;
     }
-    return "Não encontrado";
+    return NULL; // Retorna NULL se o símbolo não for encontrado
 }

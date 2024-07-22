@@ -5,11 +5,11 @@ inicioargs
 fimargs
 iniciovars
  literal chute;
- inteiro zero;
+ inteiro zero, lol;
  real um;
 fimvars
-chute="k";
-zero = 0.0;
-um = 1.0;
-hilux="rocando na fivela";
+
+zero = 0;
+zero = lol / 1;
+
 fimprog
